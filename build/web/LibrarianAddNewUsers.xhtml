@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Dream Programmers Library</title>
+        <link rel="stylesheet"  type="text/css" href="css/bootstrap.css"/>
+        <link rel="stylesheet"  type="text/css" href="layout.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </h:head>
+    <h:body>
+        <div class="wrapper-heading">
+            <div class="header">
+                <div class="logo">
+                    <img src="Image/logo.PNG" alt="Logo"/>
+                </div>
+                <div class="banner">
+                    <h1 > Dream Programmers Library</h1>
+                </div>
+                <div class="loginBox" >
+                    <h:form class="inner" >
+                   <h:panelGrid columns="2" >
+                                      <h:column><h5 class="whiteText">#{m.userName} :</h5></h:column><h:column> <h5 class="whiteText">#{sessionScope.userName}</h5></h:column>
+                                      <h:column><h5 class="whiteText">#{m.loggedAs} :</h5></h:column><h:column> <h5 class="whiteText"> #{sessionScope.role} </h5></h:column>
+                                      <h:panelGroup  style="display:block; text-align:center"><h:commandButton class="blueButton" action="#{studentBean.logout()}" value="#{m.logout}"></h:commandButton></h:panelGroup>
+                                  </h:panelGrid>
+                          </h:form>
+                </div>
+            </div></div>
+        <div class="wrapper"> 
+            <div class="main" name="main">
+                <div class="blueBoxHeading">
+                    <ui:insert name="Heading">
+                        <h2 style="background-color: blue;color:white;text-align: center;"> Add New Users </h2>
+                    </ui:insert>
+                </div>
+                <div class="blueBoxContent">
+                    <ui:insert name="box">
+                        <div class="loginBox" style="height:200px;width:450px;text-align: center;">
+                        <h:form class="inner" >
+                            <h:panelGrid columns="2" style="text-align: right;margin: 10px 3px 30px 100px;"  >
+                                <h:column >Student ID:   </h:column>  <h:inputText  class="inner"  label="" value="#{controllerBean.newStudent.studentId}"></h:inputText>
+                                <h:column>First Name: </h:column>   <h:inputText  value="#{controllerBean.newStudent.firstName}" label=""/>
+                                <h:column>Last Name: </h:column><h:inputText  label="" value="#{controllerBean.newStudent.lastName}"></h:inputText>
+                                <h:column>Department: </h:column><h:inputText  label="" value="#{controllerBean.newStudent.department}"></h:inputText>
+                                <h:column>Email: </h:column><h:inputText  label="" value="#{controllerBean.newStudent.email}"></h:inputText>
+                                <h:panelGroup  style="display:block; text-align:center">
+                                    <h:panelGroup ><h:commandButton class="blueButton" value="Add User" action="#{controllerBean.addnewUser()}"/></h:panelGroup>
+                                </h:panelGroup>
+                            </h:panelGrid>   
+
+
+                        </h:form> 
+                        </div>
+                    </ui:insert>
+                </div>
+            </div>
+            <div class="sidebar">Notifications</div>
+            <div class="nav">
+
+                <div class="nav-bar1"> 
+                    <p>Welcome to Dream Programmers Library</p>
+                    <h:form>
+                       <h:commandButton class="blueButton" action="LibrarianAddNewUsers" value="Add Users"></h:commandButton><br/>
+                    <h:commandButton class="blueButton" action="#" value="Manage Inventory"></h:commandButton><br/>
+                    <h:commandButton class="blueButton" action="LibrarianPurchaseRequests" value="Purchase Requests"></h:commandButton><br/>
+                    </h:form>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="footer">Footer</div>
+    </h:body>
+</html>
+

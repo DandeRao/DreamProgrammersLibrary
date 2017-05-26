@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 13, 2016, 12:29:14 AM
+    Author     : Mallikharjuna Rao Dande 
+*/
+.wrapper-heading{
+    
+     margin: 0 0em 0 0em;
+     height: 130px;
+}
+.header {
+    background-color: #3300ff;
+    color: #fff;
+    height: 130px;
+}
+.a{
+
+    
+}
+.logo{
+    position: relative;
+    float: left;
+    top:3px;
+    left: 3px;
+}
+.banner{
+   position: relative;
+    text-align: center;
+    float: left;
+    width: 60%;
+    height: 100%;
+    color: white;
+    
+}
+.loginBox{
+    position: relative;
+    width: 13em;
+    padding: 0 0.5em;
+    float: left;
+    margin-left: -0.1em;
+    height:130px;
+    border-left:  solid white;
+    }
+.sidebar {
+    width: 13em;padding: 0 0.5em;
+    background-color: #3300ff;
+    float: left;
+    margin-left: -14em;
+    position: relative;
+    left: 15em;
+    height:40%;
+    top : 10px;
+
+}
+
+.nav {
+    width: 11em;padding: 0.1em 0.5em;
+    background-color: #3300ff;
+    float: left;
+    margin-left: -100%;
+    position: relative;
+    right: 13em;
+    height:55%;
+    top : 10px;
+    color:white;
+}
+.main {
+    float: left;
+    width: 100%;
+        height: 100%;
+       background-color: white;
+}
+.footer {
+    clear: left;
+    border-top: 1px solid #369;
+    height: 130px;
+}
+body {
+    margin: 0 auto;
+    min-width: 40em;
+    max-width: 56em;
+
+}
+.wrapper {
+clear: left;
+    margin: 0 14em 0 12em;
+    padding: 0 1em;
+    height: 500px;
+} 

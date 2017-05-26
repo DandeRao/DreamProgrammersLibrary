@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <title>Dream Programmers Library</title>
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet"  type="text/css" href="layout.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="LandingPageTemplate.xhtml">
+            <ui:define name="Heading">
+                <h1 class="projectorBookingBanner"> Projector Booking</h1>
+            </ui:define>
+            <ui:define name="carouselBox">
+                <div class="item_banner">
+                    <h3>Projector Booking</h3>
+                </div>
+                <div class="item_table">
+                    
+                        <h:panelGrid columns="2" style="text-align: right;margin: 10px 3px 30px 100px;" cellpadding="10" cellspacing="4">
+                            <h:column>Student Id: </h:column><h:inputText  label="" value="#{sessionScope.studentDetails.studentId}"></h:inputText>
+                            <h:column>Booking Id</h:column><h:inputText  label="" value="#{controllerBean.createBookingEntry()}"></h:inputText>
+                            <h:column>Equipment Type: </h:column><h:inputText  label="" value="#{sessionScope.equipment.type}"></h:inputText>
+                            <h:column>Equipment Details: </h:column><h:inputText  label="" value="#{sessionScope.equipment.details}"></h:inputText>
+                            <h:column>Booking Time </h:column><h:inputText  label="" value="#{controllerBean.bookingDate}">
+                                <f:convertDateTime pattern="MM-d-YYYY" />
+                            </h:inputText>
+                          
+                            <h:panelGroup  style="display:block; text-align:center">
+                                <h:link class="blueButton" value ="Go Home" outcome="studentLandinPage"></h:link>
+                            </h:panelGroup>
+<!--                                <h:Link id="bluebutton" value="Go Home" action="studentLandinPage"/></h:link>-->
+                        </h:panelGrid>
+                    
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,21 @@
+
+#### Redirect Navigational Case with checks
+
+<navigation-rule>
+		<from-view-id>start.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>payment</from-outcome>
+			<if>#{paymentController.orderQty < 100}</if>
+			<to-view-id>ordermore.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>payment</from-outcome>
+			<if>#{paymentController.registerCompleted}</if>
+			<to-view-id>payment.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>payment</from-outcome>
+			<to-view-id>register.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <title>Dream Programmers Library</title>
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet"  type="text/css" href="layout.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="StudentTemplate.xhtml">
+             <ui:define name="Heading">
+                <h1 style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; "> Booking History </h1>
+            </ui:define>
+            <ui:define name="box">
+                <h:form>
+                    <h:dataTable value="#{controllerBean.bookingHistory}" var="bh" border="1" style="border-color: blue;text-align: center;color:black;padding-left: 10px; ">
+                        <f:facet name="caption" ><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Booking History</span></f:facet>
+
+                         <h:column >
+                             <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Booking ID</span></f:facet>
+                              #{bh.bookingID}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Item Type</span></f:facet>
+                                #{bh.type}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Booked On</span></f:facet>
+                                #{bh.stringBookinDate}
+                        </h:column>
+                        
+                           <h:column>
+                               <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Item Details.</span></f:facet>
+                                #{bh.details}
+                        </h:column>
+                        
+                    </h:dataTable>
+                        <h:commandButton value="Go Home" class="blueButton" action="studentLandinPage"></h:commandButton>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

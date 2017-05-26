@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <title>Dream Programmers Library</title>
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet"  type="text/css" href="layout.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <h:head>
+        <title>Search</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="StudentTemplate.xhtml">
+            <ui:define name="Heading">
+               <h1 style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; "> Search Results </h1>
+            </ui:define>
+            <ui:define name="box">
+                <h:form>
+                    <h:dataTable value="#{controllerBean.searchBooksAndJournals()}" var="booksAndJournals" border="1" style="border-color: blue;text-align: center;color:black;padding-left: 10px;width:60%; ">
+                        <f:facet name="caption" > <span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Search Results</span></f:facet>
+
+                        <h:column >
+                            <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: justify;color:white;padding-left: 20px; padding-right: 20px;width:20% ">Title</span></f:facet>
+                                #{booksAndJournals.title}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Author</span></f:facet>
+                                #{booksAndJournals.author}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Pages</span></f:facet>
+                                #{booksAndJournals.pages}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Volume</span></f:facet>
+                                #{booksAndJournals.volume}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">ISBN</span></f:facet>
+                                #{booksAndJournals.ISBN}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><span style="background-color: blue;align-items: center;text-align: center;color:white;padding-left: 10px; padding-right: 20px; ">Action</span></f:facet>
+                            <h:commandButton value="Book" class="blueButton" action="#{controllerBean.bookBooksAndJournals(booksAndJournals)}"></h:commandButton>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <title>Dream Programmers Library</title>
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet"  type="text/css" href="layout.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="LandingPageTemplate.xhtml">
+            <ui:define name="Heading">
+                <h1 class="projectorBookingBanner"> Projector Booking</h1>
+            </ui:define>
+            <ui:define name="carouselBox">
+                <div class="item_banner">
+                    <h3>Projector Booking</h3>
+                </div>
+                <div class="item_table">
+                    <h:form>
+                        <h:panelGrid columns="2"  style="text-align: right;margin: 10px 3px 30px 100px;" cellpadding="10" cellspacing="4">
+                            <h:column>Projector Type: </h:column><h:selectOneMenu label="" value="#{controllerBean.companyName}">
+                                <f:selectItem itemValue="Toshiba"></f:selectItem>
+                                <f:selectItem itemValue="Samsung"></f:selectItem>
+                                <f:selectItem itemValue="Epson"></f:selectItem>
+                                <f:selectItem itemValue="Dream Machines"></f:selectItem>
+                            </h:selectOneMenu>
+                            <h:column>Details: </h:column>
+                            <h:inputText label="" size="20" value="109mm Focal Length"></h:inputText>
+                            <h:panelGroup  style="display:block; text-align:center; margin-left: 50%;width:100%;padding-left: 15px;"><h:commandButton class="blueButton" value="Book" action="#{controllerBean.bookingNavigate()}"/></h:panelGroup>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

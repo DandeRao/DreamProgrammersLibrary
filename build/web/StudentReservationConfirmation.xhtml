@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <title>Dream Programmers Library</title>
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet"  type="text/css" href="layout.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="StudentTemplate.xhtml">
+            <ui:define name="Heading">
+                <h1 class="projectorBookingBanner"> Reserve Book / Journal</h1>
+            </ui:define>
+            <ui:define name="box">
+                <div class="item_banner">
+                    <h3>Books and Journals</h3>
+                </div>
+                <div class="item_table">
+
+                    <h:panelGrid columns="2"  cellpadding="10" cellspacing="4">
+                        <h:column>Student Id: </h:column><h:inputText  label="" value="#{sessionScope.studentDetails.studentId}"></h:inputText>
+                        <h:column>Booking Id</h:column><h:inputText  label="" value="#{controllerBean.createReservatonEntry()}"></h:inputText>
+                        <h:column>Item Type: </h:column><h:inputText  label="" value="#{controllerBean.book.type}"></h:inputText>
+                        <h:column>Book Details: </h:column><h:inputText  label="" value="#{controllerBean.book.title}"></h:inputText>
+                        <h:column>Booking Time </h:column><h:inputText  label="" value="#{controllerBean.bookingDate}">
+                            <f:convertDateTime pattern="MM-d-YYYY" />
+                        </h:inputText>  <h:form>
+                          <h:panelGroup  style="display:block; text-align:center">
+                                <h:link class="blueButton" value ="Go Home" outcome="studentLandinPage"></h:link>
+                            </h:panelGroup>
+                        </h:form>
+                    </h:panelGrid>
+
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
